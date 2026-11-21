@@ -5,7 +5,6 @@ import (
 	"net/http"
 
 	"github.com/google/uuid"
-
 	"xiaozhi-esp32-server-golang/internal/domain/asr/doubao/common"
 )
 
@@ -64,17 +63,9 @@ func DefaultHeader() *AsrRequestHeader {
 func NewAuthHeader(appKey, accessKey string) http.Header {
 	reqid := uuid.New().String()
 	header := http.Header{}
-
 	header.Add("X-Api-Resource-Id", "volc.seedasr.sauc.duration")
 	header.Add("X-Api-Request-Id", reqid)
 	header.Add("X-Api-Access-Key", accessKey)
-    
-
-重试
-
-    
-
-错误原因
 	header.Add("X-Api-App-Key", appKey)
 	return header
 }
